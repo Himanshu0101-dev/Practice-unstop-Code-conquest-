@@ -1,2 +1,54 @@
 # Practice-unstop-Code-conquest-
 Cricket match score practice
+Team A has set a target of N-1 runs. Team B's goal is to score exactly N-1 runs to win. You are being given an array of length N, where each element represents the maximum number of runs Team B can score on that particular ball.
+
+Team B will play one ball at a time and can score anywhere between 0 and the value given in the array for that ball.
+The total number of balls Team B plays will equal the total number of runs they score.
+Starting from the first ball (index 0), your task is to determine if Team B can score exactly N-1 runs by selecting appropriate runs from each ball.
+You need to return true if Team B can score exactly N-1 runs, or false if it is not possible.
+
+Input Format
+The first line of input should be a single integer N representing the length of the array.
+
+The second line of input should contain N space-separated integer a1, a2, a3.... aN where ai value represents the maximum run team B can score on ith ball.
+
+Output Format
+Output a single Boolean value (true or false):
+
+true: If it's possible for Team B to score exactly N-1 runs.
+false: If it's not possible to reach the target.
+Constraints
+1 <= arr.length <= 10^5
+
+0 <= arr[i] <= 10^5
+
+Sample Testcase 0
+Testcase Input
+5
+3 2 2 1 4
+Testcase Output
+true
+Explanation
+Array: [3, 2, 2, 1, 4]
+Target: Team B needs to score 4 runs.
+
+
+On the 0th ball, Team B can score up to 3 runs. Suppose they score 1 run and move to the 1st ball.
+On the 1st ball, they can score up to 2 runs. Suppose they score 2 runs, bringing the total score to 3 and move to the 3rd ball.
+From there, they can score exactly 1 run, bringing the total to 4, which is exactly what they need to win.
+Hence, the answer is true.
+
+Sample Testcase 1
+Testcase Input
+5
+3 2 1 0 4
+Testcase Output
+false
+Explanation
+Array: [3, 2, 1, 0, 4]
+Target: Team B needs to score 4 runs.
+
+
+On the 0th ball, Team B can score up to 3 runs. They might score, say, 2 runs and move to the 2nd ball.
+From the 2nd ball, they can score a maximum of 1 run, bringing the total score to 3, but they get stuck at the 3rd ball where 0 runs can be scored.
+As a result, it's impossible to reach exactly 4 runs, so the answer is false.
